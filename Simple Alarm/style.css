@@ -1,0 +1,41 @@
+.title{
+	color: red;
+	text-align: center;
+}
+
+.clock{
+	color: burlywood;
+	font-size: 100px;
+	font-weight: 100px;
+	margin: 100px;
+	text-align: center;
+		
+}
+
+.controls{
+	display: flex;
+}
+.btn_start{
+	color: wheat;
+	font-weight: bold;
+  	font-size: 150%;
+  	text-transform: uppercase;
+	  margin: 50px;
+}
+.btn_stop{
+	color: wheat;
+	font-weight: bold;
+  	font-size: 150%;
+  	text-transform: uppercase;
+	  margin: 50px;
+}
+.btn_settings{
+	color: wheat;
+	font-weight: bold;
+  	font-size: 150%;
+	margin: 50px;
+
+}
+*{
+	background-color: black;
+}
