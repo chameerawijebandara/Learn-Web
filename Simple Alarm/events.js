@@ -5,6 +5,9 @@ var maxSecs = 5;
 	
 var mins = maxMins;
 var secs = maxSecs;
+
+var backColor = "white";
+var soundTrack = "bell.mp3"
 	
 function btnStartOnClick(btnStart) {
 	
@@ -33,6 +36,9 @@ function btnStopOnClick(btnStop) {
 	displayTime();
 };
 
+function btnSettingsClick() {
+	window.location.href = "settings.html";
+}
 function timeOut() {
 	console.log("Timer tics");
 	secs--;
@@ -47,6 +53,8 @@ function timeOut() {
 	
 	if(mins + secs == 0)
 	{
+		var audio = new Audio(soundTrack);
+		audio.play();
 		alert("Time Passed");
 		clearInterval(timer);
 	}
@@ -85,4 +93,29 @@ function displayTime() {
 	document.getElementById("clock").innerHTML = formatTime();
 };
 
-displayTime();
+function btnSubmitOnClick(params) {
+	
+	window.location.href = "index.html";
+	maxMins =  document.getElementById("set_mins").value;
+	maxSecs =  document.getElementById("set_secs").value;
+	document.body.style.backgroundColor = "red";
+	backColor  = document.getElementById("set_color").value;
+	soundTrack = document.getElementById("set_sound").value;
+	
+	alert(soundTrack);
+	var audio = new Audio(soundTrack);
+		audio.play();
+	
+}
+
+function btnCancelOnClick(params) {
+	window.location.href = "settings.html";
+	alert(params);
+	
+	
+}
+window.onload = function(){
+	 displayTime();
+};
+	 
+	 

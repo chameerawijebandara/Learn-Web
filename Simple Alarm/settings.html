@@ -1,0 +1,32 @@
+<!DOCTYPE htlm>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css"></link>
+		<script src="events.js"></script>
+		<title>  Settings - Simple Stopwatch by Chameera</title>
+	</head>
+	<body>
+		<div class="title">
+			<h1>Settings</h1>
+		</div>		
+    	Set the Timer:
+		<br>
+        <input type="number" min="0" max="59" value="5" class="set_mins" id="set_mins">
+		Minutes
+		<br>
+		<input type="number" min="0" max="59" value="0" class="set_secs" id="set_secs">
+		Seconds
+		<br>
+		Set Baground Color:
+		<br>
+		<input type="color" class="set_color" id="set_color">
+		<br>
+		Set Alarm Sound:
+		<br>
+		<input type="file" class="set_sound" id="set_sound">			
+		<br>
+		<button onclick="btnSubmitOnClick()">Submit</button>
+		<button onclick="btnCancelOnClick()">Cancel</button>       
+	</body>
+</html>
