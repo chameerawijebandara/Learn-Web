@@ -100,16 +100,15 @@ function displayTime() {
 
 function btnSubmitOnClick(params) {
 	console.log("Submit btn clicked");
-	
-	window.location.href = "index.html";
 	localStorage.maxMins =  document.getElementById("set_mins").value;
 	localStorage.maxSecs =  document.getElementById("set_secs").value;
 	localStorage.backColor  = document.getElementById("set_color").value;
-	if(document.getElementById("set_sound").value)
+	if(document.getElementById("set_sound").files[0])
 	{
-		localStorage.soundTrack = document.getElementById("set_sound").value;	
+		localStorage.soundTrack = document.getElementById("set_sound").files[0];	
 	}
 	
+	window.location.href = "index.html";
 	
 }
 

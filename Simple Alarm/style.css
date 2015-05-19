@@ -37,13 +37,10 @@
 	margin: 50px;
 
 }
-*{
-	outline: 1px solid red !important;
-	background: c
-}
-.form{
+.settings{
 	margin: 100px;
 	border-spacing: 100px;
+	text-align: center;
 }
 .set_mins{
 	margin-left: 50px;
@@ -69,7 +66,7 @@
 .set_sound{
 	margin-left: 50px;
 	margin-right: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	margin-top:  10px;
 }
 .btn_submit{
