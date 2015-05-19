@@ -39,6 +39,7 @@
 }
 *{
 	outline: 1px solid red !important;
+	background: c
 }
 .form{
 	margin: 100px;
@@ -66,6 +67,25 @@
 	margin-top:  10px;
 }
 .set_sound{
+	margin-left: 50px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top:  10px;
+}
+.btn_submit{
+	margin-left: 50px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top:  10px;
+}
+
+.btn_default{
+	margin-left: 50px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top:  10px;
+}
+.btn_cancel{
 	margin-left: 50px;
 	margin-right: 10px;
 	margin-bottom: 10px;
