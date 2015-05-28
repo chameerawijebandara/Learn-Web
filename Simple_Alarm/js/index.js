@@ -8,27 +8,23 @@ var soundTrack;
 function btnStartOnClick(btnStart) {
 	
 	console.log("Start btn clicked");
-	
-	
-	if (btnStart.innerHTML.toUpperCase() =="START")
-	{
-		
+	if (btnStart.innerHTML.toUpperCase() == "START")
+	{		
 		btnStart.innerHTML = "Pause";
-		timer = setInterval(timeOut,1000);
+		timer = setInterval(timeOut, 1000);
 	} 
    else
     {
 		btnStart.innerHTML = "Start";	
 		clearInterval(timer);
-	} 
-	
+	}
 };
 
 function btnStopOnClick(btnStop) {
 	console.log("Stop btn clicked");
 	
 	clearInterval(timer);
-	document.getElementById("btn_start").innerHTML = "Start";	
+	$("#btn_start").innerHTML = "Start";	
 	mins = maxMins;
 	secs = maxSecs;
 	displayTime();
