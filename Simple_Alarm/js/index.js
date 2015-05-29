@@ -102,14 +102,14 @@ function displayTime() {
 window.onload = function() {
     console.log("Page loaded");
 
-    maxMins = LocalStorage.getMaxMins();
-    maxSecs = LocalStorage.getMaxSecs();
+    maxMins = DB.getMaxMins();
+    maxSecs = DB.getMaxSecs();
 
     mins = maxMins;
     secs = maxSecs;
 
-    document.bgColor = LocalStorage.getBackColor();
-    soundTrack = LocalStorage.getSoundTrack();
+    document.bgColor = DB.getBackColor();
+    soundTrack = DB.getSoundTrack();
 
     displayTime();
 };
