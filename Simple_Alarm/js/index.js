@@ -5,27 +5,27 @@ var mins;
 var secs;
 var soundTrack;
 
-function btnStartOnClick(btnStart) {
+function btnStartOnClick() {
 
     console.log("Start btn clicked");
-    if (btnStart.innerHTML.toUpperCase() === "START")
+    if ($("#btn_start").text().toUpperCase() === "START")
     {
-        btnStart.innerHTML = "Pause";
+        $("#btn_start").text("Pause");
         timer = setInterval(timeOut, 1000);
     }
     else
     {
-        btnStart.innerHTML = "Start";
+        $("#btn_start").text("Start");
         clearInterval(timer);
     }
 }
 ;
 
-function btnStopOnClick(btnStop) {
+function btnStopOnClick() {
     console.log("Stop btn clicked");
 
     clearInterval(timer);
-    $("#btn_start").innerHTML = "Start";
+    $("#btn_start").text("Start");
     mins = maxMins;
     secs = maxSecs;
     displayTime();
@@ -42,22 +42,22 @@ function timeOut() {
     if (secs < 0)
     {
         mins--;
-
         secs = 59;
     }
+    
     if (secs < 0 || mins < 0)
     {
-        document.getElementById("btn_start").innerHTML = "Start";
+        $("#btn_start").text("Start");
         return;
     }
+    
     displayTime();
-
     if (mins + secs === 0)
     {
-        document.getElementById("btn_start").innerHTML = "Start";
+        $("#btn_start").text("Start");
         var audio = new Audio(soundTrack);
         audio.play();
-        document.getElementById("clock").innerHTML = "Time Passed";
+        $("#clock").text("Time Passed");
         clearInterval(timer);
     }
 }
@@ -86,30 +86,28 @@ function formatTime() {
             return mins + " : " + secs;
         }
     }
-
 }
 ;
 
 function displayTime() {
-    if (document.getElementById("clock"))
+    if ($("#clock"))
     {
-        document.getElementById("clock").innerHTML = formatTime();
+        $("#clock").text(formatTime());
     }
 }
 ;
 
-
 window.onload = function() {
     console.log("Page loaded");
 
-    maxMins = LocalStorage.getMaxMins();
-    maxSecs = LocalStorage.getMaxSecs();
+    maxMins = DB.getMaxMins();
+    maxSecs = DB.getMaxSecs();
 
     mins = maxMins;
     secs = maxSecs;
 
-    document.bgColor = LocalStorage.getBackColor();
-    soundTrack = LocalStorage.getSoundTrack();
+    document.bgColor = DB.getBackColor();
+    soundTrack = DB.getSoundTrack();
 
     displayTime();
 };

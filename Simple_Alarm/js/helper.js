@@ -1,5 +1,5 @@
 var DB = {
-    "getMaxMins": function()
+    getMaxMins: function()
     {
         if (!localStorage.maxMins)
         {
@@ -7,7 +7,7 @@ var DB = {
         }
         return localStorage.maxMins;
     },
-    "getMaxSecs": function()
+    getMaxSecs: function()
     {
         if (!localStorage.maxSecs)
         {
@@ -15,7 +15,7 @@ var DB = {
         }
         return localStorage.maxSecs;
     },
-    "getBackColor": function()
+    getBackColor: function()
     {
         if (!localStorage.backColor)
         {
@@ -23,7 +23,7 @@ var DB = {
         }
         return localStorage.backColor;
     },
-    "getSoundTrack": function()
+    getSoundTrack: function()
     {
         if (!localStorage.soundTrack)
         {
@@ -31,23 +31,23 @@ var DB = {
         }
         return localStorage.soundTrack;
     },
-    "setMaxMins": function(maxMins)
+    setMaxMins: function(maxMins)
     {
         localStorage.maxMins = maxMins;
     },
-    "setMaxSecs": function(maxSecs)
+    setMaxSecs: function(maxSecs)
     {
         localStorage.maxSecs = maxSecs;
     },
-    "setBackColor": function(backColor)
+    setBackColor: function(backColor)
     {
         localStorage.backColor = backColor;
     },
-    "setSoundTrack": function(soundTrack)
+    setSoundTrack: function(soundTrack)
     {
         localStorage.soundTrack = soundTrack;
     },
-    "free": function name() {
+    free: function name() {
         localStorage.removeItem("maxMins");
         localStorage.removeItem("maxSecs");
         localStorage.removeItem("backColor");

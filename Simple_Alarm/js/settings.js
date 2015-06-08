@@ -1,18 +1,18 @@
-function btnSubmitOnClick(params) {
+function btnSubmitOnClick() {
     console.log("Submit btn clicked");
 
-    DB.setMaxMins(document.getElementById("set_mins").value);
-    DB.setMaxSecs(document.getElementById("set_secs").value);
-    DB.setBackColor(document.getElementById("set_color").value);
+    DB.setMaxMins($("#set_mins").val());
+    DB.setMaxSecs($("#set_secs").val());
+    DB.setBackColor($("#set_color").val());
 
-    if (document.getElementById("set_color").value)
+    if ($("#set_color").val())
     {
-        DB.setSoundTrack(document.getElementById("set_sound").value);
+        DB.setSoundTrack($("#set_sound").val());
     }
     window.location.href = "index.html";
 }
 
-function btnCancelOnClick(params) {
+function btnCancelOnClick() {
     console.log("Cancel btn clicked");
 
     var r = confirm("All your changes will be discarded.");
@@ -22,7 +22,7 @@ function btnCancelOnClick(params) {
     window.location.href = "index.html";
 }
 
-function btnDefaultOnClick(params) {
+function btnDefaultOnClick() {
     console.log("Default btn clicked");
 
     var r = confirm("All your changes will be discarded.");
@@ -36,9 +36,8 @@ function btnDefaultOnClick(params) {
 window.onload = function() {
     console.log("Page loaded");
 
-    document.getElementById("set_mins").value = DB.getMaxMins();
-    document.getElementById("set_secs").value = DB.getMaxSecs();
-    document.getElementById("set_color").value = DB.getBackColor();
-
+    $("#set_mins").val(DB.getMaxMins());
+    $("#set_secs").val(DB.getMaxSecs());
+    $("#set_color").val(DB.getBackColor());
 };
 	 
