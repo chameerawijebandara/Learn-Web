@@ -44,21 +44,50 @@ function timeOut() {
         mins--;
         secs = 59;
     }
-    
+
     if (secs < 0 || mins < 0)
     {
         $("#btn_start").text("Start");
         return;
     }
-    
+
     displayTime();
-    if (mins + secs === 0)
+    if (mins + secs == 0)
     {
+        clearInterval(timer);
         $("#btn_start").text("Start");
         var audio = new Audio(soundTrack);
+        $.notify.addStyle("timeout", {html:
+                    "<div>" +
+                    "<div class='clearfix'>" +
+                    "<div class='title' data-notify-html='title'/>" +
+                    "<div class='buttons'>" +
+                    "<button class='yes' data-notify-text='button'></button>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>"
+        });
+
+        $(document).on('click', '.notifyjs-foo-base .yes', function() {
+            //hide notification
+            $(this).trigger('notify-hide');
+            alert($(this).text() + " clicked!");
+            //relad page 
+            location.reload();
+        });
+
+        $.notify({title: 'Time Passed',
+            button: 'Confirm',
+        }, {
+            className: "success",
+            style: 'timeout',
+            autoHide: false,
+            clickToHide: false
+        });
+
         audio.play();
         $("#clock").text("Time Passed");
-        clearInterval(timer);
+
     }
 }
 ;
