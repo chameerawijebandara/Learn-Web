@@ -33,11 +33,10 @@ function btnDefaultOnClick() {
     DB.free();
     window.location.href = "index.html";
 }
-window.onload = function() {
+$(window).load(function() {
     console.log("Page loaded");
-
     $("#set_mins").val(DB.getMaxMins());
     $("#set_secs").val(DB.getMaxSecs());
     $("#set_color").val(DB.getBackColor());
-};
+});
 	 
